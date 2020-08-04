@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 0!important;
+    position: relative;
+    
+  }
+
+  .banner {
+    
+    border: 1px solid #97a0aa;
+    width: 15%;
+    height: 30%;
+    padding-top: 13px;
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    
+    overflow: hidden;
+  }
+  .banner-top {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #515151;
+    
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+   
+    border-bottom: 1px solid #97a0aa;
+  }
+
+  .controls {
+     
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+     
+    input {
+      display: none;
+    }
+  
+    label {
+      cursor: pointer;
+      padding-right: 35px;
+      position: relative;
+      display: block;
+      font-size: 18px;
+      
+    }
+  
+    input[type="checkbox"] {
+      position: absolute; 
+      visibility: hidden !important;
+    }
+  
+    input[type="checkbox"] + label {
+  
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -7.5px;
+        box-sizing: border-box;
+      }
+  
+      &:before {
+  
+        width: 35px;
+        height: 15px;
+        top: 18px;
+        right: 0px;
+        background: #acacac;
+        border: 1px solid #97a0aa;
+        border-radius: 15px;
+      }
+  
+      &:after {
+        width: 20px;
+        height: 20px;
+        right: 15px;
+        background: #818181;
+        border-radius: 50%;
+        transition: all 200ms ease-out;
+      }
+    }
+  
+    input[type="checkbox"]:checked + label {
+  
+      &:after {
+        right: 0px;
+        background: #818181;
+      }
+    }
+  }
