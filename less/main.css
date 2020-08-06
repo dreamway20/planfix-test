@@ -1,0 +1,174 @@
+#container {
+    display        : flex;
+    flex-flow : row wrap;
+    justify-content: center;
+    background     : #FFF;
+    
+}
+
+#container .item {
+    order         : 0;
+    flex          : 0 1 auto;
+    align-self    : flex-start;
+    flex-direction: column;
+    width: 15%;
+    height: 30%;
+    border        : 1px solid #E2DFDF;
+    text-align    : center;
+    margin        : 9px
+}
+
+#container .item .activField .logo {
+    width        : 180px;
+    height       : 90px;
+    margin: 0px 25px 25px 25px;
+}
+
+#container .item .activField p {
+    color      : #515151;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#container .item .activField p a {
+    color          : #4da4cc !important;
+    text-decoration: none
+}
+
+#container .item .controls {
+    border-top   : 1px solid #E2DFDF;
+    margin-bottom: 5px;
+    padding-top  : 9px
+}
+
+#container .item .controls input.switchCheckBox {
+    position          : relative;
+    width             : 40px;
+    height            : 20px;
+    -webkit-appearance: none;
+    outline           : 0;
+    background        : #acacac;
+    border-radius     : 20px
+}
+
+#container .item .controls input:checked[type=checkbox] {
+    background: #2FCE3F
+}
+
+#container .item .controls input[type=checkbox]:before {
+    content      : '';
+    position     : absolute;
+    width        : 20px;
+    height       : 20px;
+    top          : 0;
+    left         : 0;
+    border-radius: 10px;
+    background   : #818181;
+    transform    : scale(1.1)
+}
+
+#container .item .controls input:checked[type=checkbox]:before {
+    left      : 20px;
+    background: #118c4e
+}
+
+#login {
+    display        : none;
+    flex-flow : row wrap;
+    justify-content: center;
+    align-content  : center;
+    align-items    : center;
+    z-index        : 9998;
+    position       : fixed;
+    background     : rgba(0, 0, 0, .5);
+    left           : 0;
+    right          : 0;
+    bottom         : 0;
+    top            : 0;
+    height         : 100%;
+    width          : 100%
+}
+
+#login {
+    order         : 1;
+    background    : #ECECEC;
+    flex          : 0 1 auto;
+    align-self    : auto;
+    color         : #818181;
+    font-size     : 14px;
+    padding-left  : 30px;
+    padding-right : 30px;
+    padding-top   : 10px;
+    padding-bottom: 20px
+}
+
+#login #loginWindow #notice {
+    color         : #000;
+    font-family   : sans-serif;
+    font-weight   : 700;
+    background    : #E7F4FA;
+    border-top    : 2px solid #D6E9F0;
+    border-bottom : 2px solid #D6E9F0;
+    height        : auto;
+    width         : 540px;
+    line-height   : 1.5;
+    padding-top   : 20px;
+    padding-bottom: 20px;
+    padding-left  : 10px;
+    padding-right : 10px;
+    margin-bottom : 20px;
+    text-align    : left
+}
+
+#login #loginWindow .enterBlock {
+    color: #818181
+}
+
+#login #loginWindow .enterBlock input.textBoxObject {
+    width: 410px
+}
+
+#login #loginWindow .buttonBlock {
+    text-align: right;
+    margin-top: 20px
+}
+
+#login #loginWindow .buttonBlock .closeBtn {
+    background    : #ECECEC;
+    color         : #818181;
+    border        : none;
+    outline       : 0;
+    padding-top   : 11px;
+    padding-bottom: 11px;
+    padding-left  : 26px;
+    padding-right : 26px;
+    margin-right  : 5px
+}
+
+#login #loginWindow .buttonBlock .closeBtn:hover {
+    background    : #E7F4FA;
+    border        : 1px solid #FFF;
+    color         : #818181;
+    outline       : 0;
+    border-radius : 5px;
+    padding-top   : 10px;
+    padding-bottom: 10px;
+    padding-left  : 25px;
+    padding-right : 25px;
+    cursor        : pointer
+}
+
+#login #loginWindow .buttonBlock .saveBtn {
+    background    : #6FA92E;
+    outline       : 0;
+    color         : #EDFACB;
+    font-size     : 14px;
+    border        : none;
+    border-radius : 5px;
+    padding-top   : 10px;
+    padding-bottom: 10px;
+    padding-left  : 25px;
+    padding-right : 25px;
+    cursor        : pointer
+}
+

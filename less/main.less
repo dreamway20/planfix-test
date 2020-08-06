@@ -1,118 +1,187 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-  }
-  .container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    margin-right: 0!important;
-    position: relative;
-    
-  }
+@loginBackground : #ECECEC;
+@color: #818181;
 
-  .banner {
-    
-    border: 1px solid #97a0aa;
-    width: 15%;
-    height: 30%;
-    padding-top: 13px;
-    margin: 10px;
+#container{
     display: flex;
-    flex-flow: row wrap;
-    box-sizing: border-box;
-    
-    overflow: hidden;
-  }
-  .banner-top {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #515151;
-    
-    width: 80%;
-    margin: 10px;
-    display: flex;
+    flex-flow : row wrap;
     justify-content: center;
-    box-sizing: border-box;
-  }
-  
-  .logo {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-   
-    border-bottom: 1px solid #97a0aa;
-  }
+    background: #FFFFFF;
+    
+    .item{
+        order: 0;
+        flex: 0 1 auto;
+        align-self: flex-start;
+        flex-direction: column;
+        width: 15%;
+        
+        border: 1px solid #E2DFDF;
+        text-align: center;
+        margin: 9px;
+        .activField{
+            .logo{
+                width: 180px;
+                height: 90px;
+                margin: 0px 25px 25px 25px;
+            }       
+            p{
+                color: #515151;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif ;
+                font-size: 14px;
+                a{
+                    color: #4da4cc !important;
+                    text-decoration: none;
+                }
+            }
+        }
+        .controls{
+            border-top: 1px solid #E2DFDF;
+            margin-bottom: 5px;
+            padding-top: 9px;
+            input.switchCheckBox {
+                position: relative;
+                width: 40px;
+                height: 20px;
+                -webkit-appearance: none;
+                outline: none;
+                background: #acacac;
+                border-radius: 20px;
+            }
 
-  .controls {
-     
-    padding: 30px;
-    width: 100%;
-    display: flex;
+            input:checked[type="checkbox"]{
+                background: #2FCE3F;
+            }
+
+            input[type="checkbox"]:before{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                background: @color;
+                transform:  scale(1.1);
+            }
+
+            input:checked[type="checkbox"]:before{
+                left:20px;
+                background: #118c4e;
+            }
+
+        }
+    }
+}
+
+#login{
+    display: none;
+    flex-flow : row wrap;
     justify-content: center;
-     
-    input {
-      display: none;
+    align-content:  center;
+    align-items:  center;
+    z-index: 9998;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    height:100%;
+    width: 100%;
+    #loginWindow{
+        order: 1;
+        background:@loginBackground;
+        flex: 0 1 auto;
+        align-self: auto;
+        color: @color;
+        font-size: 14px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom:20px;
+        #notice{
+            color: black;
+            font-family: sans-serif;
+            font-weight: bold;
+            background: #E7F4FA;
+            border-top: 2px solid #D6E9F0;
+            border-bottom: 2px solid #D6E9F0;
+            height: auto;
+            width: 540px;
+            line-height: 1.5;
+            padding-top:20px;
+            padding-bottom:20px;
+            padding-left:10px;
+            padding-right:10px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .enterBlock{
+            color: @color;
+            input.textBoxObject{
+                width: 410px;
+            }
+        }
+        .buttonBlock{
+            text-align: right;
+            margin-top: 20px;
+            .closeBtn{
+                background: @loginBackground;
+                color: @color;
+                border: none;
+                outline: none;
+                padding-top: 11px;
+                padding-bottom: 11px;
+                padding-left: 26px;
+                padding-right:26px;
+                margin-right: 5px;
+            }
+
+            .closeBtn:hover{
+                background: #E7F4FA;
+                border: 1px solid #FFFFFF;
+                color: @color;
+                outline: none;
+                border-radius: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 25px;
+                padding-right:25px;
+                cursor: pointer;
+            }
+
+            .saveBtn{
+                background: #6FA92E;
+                outline: none;
+                color: #EDFACB;
+                font-size: 14px;
+                border: none;
+                border-radius: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 25px;
+                padding-right:25px;
+                cursor: pointer;
+            }
+
+        }
     }
-  
-    label {
-      cursor: pointer;
-      padding-right: 35px;
-      position: relative;
-      display: block;
-      font-size: 18px;
-      
-    }
-  
-    input[type="checkbox"] {
-      position: absolute; 
-      visibility: hidden !important;
-    }
-  
-    input[type="checkbox"] + label {
-  
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        margin-top: -7.5px;
-        box-sizing: border-box;
-      }
-  
-      &:before {
-  
-        width: 35px;
-        height: 15px;
-        top: 18px;
-        right: 0px;
-        background: #acacac;
-        border: 1px solid #97a0aa;
-        border-radius: 15px;
-      }
-  
-      &:after {
-        width: 20px;
-        height: 20px;
-        right: 15px;
-        background: #818181;
-        border-radius: 50%;
-        transition: all 200ms ease-out;
-      }
-    }
-  
-    input[type="checkbox"]:checked + label {
-  
-      &:after {
-        right: 0px;
-        background: #818181;
-      }
-    }
-  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
